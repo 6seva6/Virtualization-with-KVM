@@ -16,3 +16,7 @@ VM Preparation:
 
  - Clone the original VM in which you installed the Linux OS and name it "Ansible Host."
  - Be sure to select the option to generate new MAC addresses.
+ - In order to have a GUI for Virtual Machine Manager that allows us to manage our local infrastructure from one window—without resorting to terminal commands—we need to install a server with a GUI by executing the following command:
+```bash
+sudo dnf group install 'Server with GUI'
+```
