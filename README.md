@@ -11,6 +11,8 @@ VM Preparation:
 - Under Attached to, select Bridged Adapter.
 
 ![Image](https://github.com/user-attachments/assets/59365b7b-fb16-48c7-bcad-865a05a1b0eb)
- 
-  - Clone the original VM in which you installed the Linux OS and name it "Ansible Host."
-  - Be sure to select the option to generate new MAC addresses.
+ - Check if the Nested virtualisation is enabled to be able to run VM's insite current VM.
+![изображение](https://github.com/user-attachments/assets/540cba8c-a00c-4443-a4b1-ae461cf75dbe)
+
+ - Clone the original VM in which you installed the Linux OS and name it "Ansible Host."
+ - Be sure to select the option to generate new MAC addresses.
