@@ -58,7 +58,7 @@ A bit explanation:
 ```bash
  systemctl status libvirtd
 ```
-- Enable it if disabled:
+- Enable it if it was disabled:
 ```bash
 sudo systemctl enable --now vibvirtd
 ```
