@@ -42,5 +42,12 @@ sudo systemctl set-default graphical.target
 sudo reboot
 ```
 Anyway, it’s more convenient to continue using our SSH connection so that we can easily copy and paste.
-K
 
+- Install packages:
+```bash
+sudo dnf install libvirt qemu-kvm virt-install virt-manager 
+```
+A bit explanation:
+-     libvirt: A toolkit and daemon providing a standardized API for managing virtual machines, abstracting the underlying hypervisor details.
+qemu-kvm: QEMU is an emulator that provides hardware virtualization; combined with KVM (Kernel-based Virtual Machine), it enables efficient, full virtualization on Linux.
+virt-install: A command-line utility that simplifies creating and installing new virtual machines using libvirt.
