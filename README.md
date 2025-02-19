@@ -48,6 +48,18 @@ Anyway, it’s more convenient to continue using our SSH connection so that we c
 sudo dnf install libvirt qemu-kvm virt-install virt-manager 
 ```
 A bit explanation:
--  libvirt: A toolkit and daemon providing a standardized API for managing virtual machines, abstracting the underlying hypervisor details.
-qemu-kvm: QEMU is an emulator that provides hardware virtualization; combined with KVM (Kernel-based Virtual Machine), it enables efficient, full virtualization on Linux.
-virt-install: A command-line utility that simplifies creating and installing new virtual machines using libvirt.
+- libvirt: A toolkit and daemon providing a standardized API for managing virtual machines, abstracting the underlying hypervisor details.
+- qemu-kvm: QEMU is an emulator that provides hardware virtualization; combined with KVM (Kernel-based Virtual Machine), it enables efficient, full virtualization on Linux.
+- virt-install: A command-line utility that simplifies creating and installing new virtual machines using libvirt.
+- virt-manager: Remote GUI.
+- openssh-askpass: Opens a prompt window for entering the password.
+
+- Check if the libvirtd daemon is running:
+```bash
+ systemctl status libvirtd
+```
+- Enable it if disabled:
+```bash
+sudo systemctl enable --now vibvirtd
+```
+Now, by executing `ip a`, you can see that a new Ethernet adapter has been added. Its name is virbr0, and it has the default address `192.168.122.1`.
