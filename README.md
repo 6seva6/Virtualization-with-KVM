@@ -19,7 +19,7 @@ VM Preparation:
  - The installation process will be skipped.
  
  SSH connection and packet instalation:
- - Run you virtual machine 
+ - Run your VM. 
  - To be able to connect to the VMs, we need to check their IP addresses. Open each VM window one by one, log in, and type `ip a`. Write down their IP addresses, and note which VM each one belongs to. 
 
 ![Image](https://github.com/user-attachments/assets/87d11c4f-a82e-4aeb-b91e-ff5a6f3abc45)
@@ -32,4 +32,8 @@ ssh username@ip_that_you_write
  - In order to have a GUI for Virtual Machine Manager that allows us to manage our local infrastructure from one window—without resorting to terminal commands—we need to install a server with a GUI by executing the following command:
 ```bash
 sudo dnf group install 'Server with GUI'
+```
+- By default, a server might boot into a multi-user (text-based) runlevel. To make the server start into the GUI, run:
+```bash
+sudo systemctl set-default graphical.target
 ```
