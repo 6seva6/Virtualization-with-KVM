@@ -41,4 +41,6 @@ sudo systemctl set-default graphical.target
 ```bash
 sudo reboot
 ```
+Anyway, it’s more convenient to continue using our SSH connection so that we can easily copy and paste.
+K
 
