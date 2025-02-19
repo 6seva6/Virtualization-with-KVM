@@ -37,3 +37,8 @@ sudo dnf group install 'Server with GUI'
 ```bash
 sudo systemctl set-default graphical.target
 ```
+- Reboot the server for applying changes and load GUI:
+```bash
+sudo reboot
+```
+
