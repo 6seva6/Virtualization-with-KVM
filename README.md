@@ -70,12 +70,73 @@ Install packages for VM manager:
 A bit explanation:
 - virt-manager: Remote GUI.
 - openssh-askpass: Opens a prompt window for entering the password.
+- libvirt
+- sudo dnf install -y polkit
+- sudo dnf install -y polkit-kde
 
 NFS server instalation and congiguration:
 - Install NFS utilities on NFS server:
 ```bash
  sudo dnf install -y nfs-utils
 ```
+- Enable and start the NFS server service
 ```bash
- 
+ sudo systemctl enable nfs-server --now
+```
+- Create a directory to export
+
+```bash
+ sudo mkdir -p /var/nfs
+```
+You can also adjust ownership and permissions as needed. For instance:
+
+```bash
+sudo chown -R nobody:nobody /var/nfs
+sudo chmod -R 755 /var/nfs
+```
+- Configure the export in `/etc/exports`
+
+```bash
+sudo vi /etc/exports
+```
+Example line to allow read-write access for every ip:
+```bash
+/var/nfs *(rw,sync,no_root_squash)
+```
+Export the directory:
+
+```bash
+ sudo exportfs -r
+```
+Open necessary firewall ports:
+```bash
+sudo firewall-cmd --permanent --add-service=nfs
+sudo firewall-cmd --permanent --add-service=rpc-bind
+sudo firewall-cmd --permanent --add-service=mountd
+sudo firewall-cmd --reload
+```
+If SELinux is enforcing, you might also need to allow NFS to serve files from your chosen directory. Assign a proper SELinux context to the shared directory, for example:
+```bash
+sudo chcon -t public_content_rw_t /srv/nfs/shared
+```
+Set Up the NFS Clients (repeat for each client VM):
+- Install NFS utilities on NFS server:
+```bash
+ sudo dnf install -y nfs-utils
+```
+- Create a mount point:
+```bash
+sudo mkdir -p /mnt/nfs_shared 
+```
+Test connectivity by manually mounting the NFS share:
+```bash
+sudo mount -t nfs 192.168.1.32:/var/nfs /mnt/nfs_shared
+```
+Verify it’s mounted correctly:
+```bash
+df -h | grep nfs 
+```
+To have the NFS share mounted automatically whenever the client restarts, add an entry to `/etc/fstab`:
+```bash
+
 ```
