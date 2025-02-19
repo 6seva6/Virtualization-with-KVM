@@ -43,16 +43,14 @@ sudo reboot
 ```
 Anyway, it’s more convenient to continue using our SSH connection so that we can easily copy and paste.
 
-- Install packages:
+Install packages for Hypervisors:
 ```bash
-sudo dnf install libvirt qemu-kvm virt-install virt-manager 
+sudo dnf install libvirt qemu-kvm virt-install 
 ```
 A bit explanation:
 - libvirt: A toolkit and daemon providing a standardized API for managing virtual machines, abstracting the underlying hypervisor details.
 - qemu-kvm: QEMU is an emulator that provides hardware virtualization; combined with KVM (Kernel-based Virtual Machine), it enables efficient, full virtualization on Linux.
 - virt-install: A command-line utility that simplifies creating and installing new virtual machines using libvirt.
-- virt-manager: Remote GUI.
-- openssh-askpass: Opens a prompt window for entering the password.
 
 - Check if the libvirtd daemon is running:
 ```bash
@@ -60,6 +58,24 @@ A bit explanation:
 ```
 - Enable it if it was disabled:
 ```bash
-sudo systemctl enable --now vibvirtd
+sudo systemctl enable --now libvirtd
 ```
 Now, by executing `ip a`, you can see that a new Ethernet adapter has been added. Its name is virbr0, and it has the default address `192.168.122.1`.
+
+Install packages for VM manager:
+
+```bash
+ sudo dnf install virt-manager openssh-askpass
+```
+A bit explanation:
+- virt-manager: Remote GUI.
+- openssh-askpass: Opens a prompt window for entering the password.
+
+NFS server instalation and congiguration:
+- Install NFS utilities on NFS server:
+```bash
+ sudo dnf install -y nfs-utils
+```
+```bash
+ 
+```
