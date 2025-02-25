@@ -29,6 +29,7 @@ The detailed process of creating a VM on VMware will be skipped; you can check t
 ![изображение](https://github.com/user-attachments/assets/e516ffec-ce7e-4c0f-a930-406a6080e3b2)
     - Open the terminal in my case, it's MobaXterm. Then, create the folder (Right click -> new folder).
     - Inside the folder, establish the connection to the hosts. (Right click -> New connection).
+    
     ![изображение](https://github.com/user-attachments/assets/cbf87e80-70e3-48df-8dd8-f30364d2738d)
 
     - Make your user part of the wheel group to be able to execute `sudo` commans:
