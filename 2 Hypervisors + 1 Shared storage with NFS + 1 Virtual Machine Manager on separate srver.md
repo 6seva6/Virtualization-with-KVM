@@ -142,19 +142,21 @@ sudo chcon -t public_content_rw_t /var/nfs
 ```
 ## Mount the NFS Share on Each Hypervisor
 
-1. Create a mount point:
+1. Create a mount point.
+    If multiple hypervisors share the same mount point (and the same images), we will be able to perform live migration. That's why we will use the default folder for libvirt images:
     ```bash
-    sudo mkdir -p /mnt/nfs_shared 
+    /var/lib/libvirt/images
     ```
     - Test connectivity by manually mounting the NFS share:
     ```bash
-    sudo mount -t nfs 192.168.1.32:/var/nfs /mnt/nfs_shared
+    sudo mount -t nfs Hypervisor_IP:/var/nfs /var/lib/libvirt/images
     ```
+    If multiple hypervisors will share the same mount point (and the same images) we will be able to perform live migration.
     - Verify it’s mounted correctly:
     ```bash
     df -h | grep nfs 
     ```
-2. To have the NFS share mounted automatically whenever the client restarts, add an entry to `/etc/fstab`:
+3. To have the NFS share mounted automatically whenever the client restarts, add an entry to `/etc/fstab`:
 ```bash
 
 ```
