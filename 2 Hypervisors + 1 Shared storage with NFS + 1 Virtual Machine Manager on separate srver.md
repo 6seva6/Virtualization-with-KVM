@@ -136,7 +136,7 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
     sudo firewall-cmd --permanent --add-service=mountd
     sudo firewall-cmd --reload
     ```
-5.As we already discussed, SELinux is set to enforcing mode, you might also need to allow NFS to serve files from your chosen directory. Assign a proper SELinux context to the shared directory:
+5. As we already discussed, SELinux is set to enforcing mode, you might also need to allow NFS to serve files from your chosen directory. Assign a proper SELinux context to the shared directory:
 ```bash
 sudo chcon -t public_content_rw_t /var/nfs
 ```
