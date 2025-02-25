@@ -93,50 +93,50 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
      ```bash
      sudo setsebool -P virt_use_nfs 1
      ```  
-## NFS server instalation and congiguration
-- Install NFS utilities on NFS server:
-```bash
- sudo dnf install -y nfs-utils
-```
-- Enable and start the NFS server service
-```bash
- sudo systemctl enable nfs-server --now
-```
-- Create a directory to export
+## NFS server instalation and configuration
+1. Install NFS utilities on NFS server:
+    ```bash
+     sudo dnf install -y nfs-utils
+    ```
+    - Enable and start the NFS server service
+    ```bash
+     sudo systemctl enable nfs-server --now
+    ```
+2. Create a directory to export:
 
-```bash
- sudo mkdir -p /var/nfs
-```
-You can also adjust ownership and permissions as needed. For instance:
-
-```bash
-sudo chown -R nobody:nobody /var/nfs
-sudo chmod -R 0777 /var/nfs
-```
-- Configure the export in `/etc/exports`
-
-```bash
-sudo vi /etc/exports
-```
-Example line to allow read-write access for every ip:
-```bash
-/var/nfs *(rw,sync,no_root_squash)
-```
-The asterisk (*) represents all IP addresses. However, you can specify a particular IP address or a range if needed.
-
-Export the directory:
-
-```bash
- sudo exportfs -r
-```
-Open necessary firewall ports:
-```bash
-sudo firewall-cmd --permanent --add-service=nfs
-sudo firewall-cmd --permanent --add-service=rpc-bind
-sudo firewall-cmd --permanent --add-service=mountd
-sudo firewall-cmd --reload
-```
-If SELinux is enforcing, you might also need to allow NFS to serve files from your chosen directory. Assign a proper SELinux context to the shared directory, for example:
+    ```bash
+     sudo mkdir -p /var/nfs
+    ```
+    - You can also adjust ownership and permissions as needed. For instance:
+    
+    ```bash
+    sudo chown -R nobody:nobody /var/nfs
+    sudo chmod -R 0777 /var/nfs
+    ```
+3. Configure the export in `/etc/exports`
+    
+    ```bash
+    sudo vi /etc/exports
+    ```
+    Example line to allow read-write access for every ip:
+    ```bash
+    /var/nfs *(rw,sync,no_root_squash)
+    ```
+    The asterisk (*) represents all IP addresses. However, you can specify a particular IP address or a range if needed.
+    
+    Export the directory:
+    
+    ```bash
+     sudo exportfs -r
+    ```
+4. Open necessary firewall ports:
+    ```bash
+    sudo firewall-cmd --permanent --add-service=nfs
+    sudo firewall-cmd --permanent --add-service=rpc-bind
+    sudo firewall-cmd --permanent --add-service=mountd
+    sudo firewall-cmd --reload
+    ```
+5.As we already discussed, SELinux is set to enforcing mode, you might also need to allow NFS to serve files from your chosen directory. Assign a proper SELinux context to the shared directory:
 ```bash
 sudo chcon -t public_content_rw_t /var/nfs
 ```
