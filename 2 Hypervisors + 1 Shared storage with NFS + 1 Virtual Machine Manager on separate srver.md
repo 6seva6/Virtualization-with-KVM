@@ -1,9 +1,9 @@
 # Virtualization with KVM and QEMU
 For this exercise, we will need:
 
-- Oracle VM VirtualBox installed
-- Any version of a Linux server (for example, AlmaLinux 9.5)
-- A terminal capable of establishing an SSH connection (for example, PowerShell)
+- VMware installed. I tried Oracle VirtualBox, but it doesn't properly support nested virtualization.
+- Any version of a Linux server will work. Personally, I'll be using AlmaLinux 9.5 on hypervisors with NFS, and Ubuntu 22.04 on Virtual Machine Manager (VMM).
+- A terminal capable of establishing an SSH connection (for example, PowerShell). I prefer to use [MobaXterm](https://mobaxterm.mobatek.net/).
 
 VM Preparation:
 - Open the VM’s Settings.
