@@ -73,7 +73,7 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
    sudo dnf update -y
    ```
 2. Enable the extra packages repository by installing `epel-release`:
-  ```bash
+   ```bash
    sudo dnf install epel-release
    ```
 3. Install the packages needed to run KVM, QEMU, and manage VMs:
