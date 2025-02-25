@@ -67,12 +67,19 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
     ```
     - Execute the `exit` command again to apply the changes. Repeat this process on all the VMs. Aligned with their names and purposes.
     Then reestablish the ssh connection.
-## KVM/QEMU package instalation 
+## Package for instalation on both Hypervisors 
 1. Update system packages:
    ```bash
    sudo dnf update -y
    ```
-
+2. Enable the extra packages repository by installing `epel-release`:
+  ```bash
+   sudo dnf install epel-release
+   ```
+3. Install the packages needed to run KVM, QEMU, and manage VMs:
+   ```bash
+   sudo dnf install -y qemu-kvm libvirt virt-install bridge-utils nfs-utils
+   ``` 
 
 ## NFS server instalation and congiguration
 - Install NFS utilities on NFS server:
