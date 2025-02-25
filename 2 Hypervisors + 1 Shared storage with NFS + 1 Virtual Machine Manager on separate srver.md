@@ -140,24 +140,21 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
 ```bash
 sudo chcon -t public_content_rw_t /var/nfs
 ```
-Set Up the NFS Clients (repeat for each client VM):
-- Install NFS utilities on NFS server:
-```bash
- sudo dnf install -y nfs-utils
-```
-- Create a mount point:
-```bash
-sudo mkdir -p /mnt/nfs_shared 
-```
-Test connectivity by manually mounting the NFS share:
-```bash
-sudo mount -t nfs 192.168.1.32:/var/nfs /mnt/nfs_shared
-```
-Verify it’s mounted correctly:
-```bash
-df -h | grep nfs 
-```
-To have the NFS share mounted automatically whenever the client restarts, add an entry to `/etc/fstab`:
+## Mount the NFS Share on Each Hypervisor
+
+1. Create a mount point:
+    ```bash
+    sudo mkdir -p /mnt/nfs_shared 
+    ```
+    - Test connectivity by manually mounting the NFS share:
+    ```bash
+    sudo mount -t nfs 192.168.1.32:/var/nfs /mnt/nfs_shared
+    ```
+    - Verify it’s mounted correctly:
+    ```bash
+    df -h | grep nfs 
+    ```
+2. To have the NFS share mounted automatically whenever the client restarts, add an entry to `/etc/fstab`:
 ```bash
 
 ```
