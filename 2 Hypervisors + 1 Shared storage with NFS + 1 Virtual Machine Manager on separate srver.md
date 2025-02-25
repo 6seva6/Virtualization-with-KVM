@@ -160,3 +160,13 @@ sudo chcon -t public_content_rw_t /var/nfs
 ```bash
 
 ```
+# Draft
+By default, root can manage libvirt without any extra group membership. However, if you plan to manage virtual machines from a non-root account (for example, using virt-manager or virsh as a regular user), you generally need to add that user to the libvirt group. This grants the necessary permissions to communicate with the libvirtd service.
+
+Typically, you’d do something like:
+
+`sudo usermod -aG libvirt <username>`
+
+Afterward, log out and back in (or restart your session) for the group membership to take effect.
+
+In many RHEL-based distributions (including AlmaLinux), this ensures the user can use virtualization tools without having to run them with sudo privileges.
