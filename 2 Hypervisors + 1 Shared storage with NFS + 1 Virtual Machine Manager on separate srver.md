@@ -149,7 +149,7 @@ sudo chcon -t public_content_rw_t /var/nfs
     ```
     - Test connectivity by manually mounting the NFS share:
     ```bash
-    sudo mount -t nfs Hypervisor_IP:/var/nfs /var/lib/libvirt/images
+    sudo mount -t nfs NFS_server_IP:/var/nfs /var/lib/libvirt/images
     ```
     If multiple hypervisors will share the same mount point (and the same images) we will be able to perform live migration.
     - Verify it’s mounted correctly:
