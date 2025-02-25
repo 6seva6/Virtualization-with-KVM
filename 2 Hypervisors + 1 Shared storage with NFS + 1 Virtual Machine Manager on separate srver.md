@@ -3,7 +3,7 @@ For this exercise, we will need:
 
 - VMware installed. I tried Oracle VirtualBox, but it doesn't properly support nested virtualization.
 - Any version of a Linux server will work. Personally, I'll be using AlmaLinux 9.5 on hypervisors with NFS, and Ubuntu 22.04 on Virtual Machine Manager (VMM).
-- A terminal capable of establishing an SSH connection (for example, PowerShell). I prefer to use [MobaXterm](https://mobaxterm.mobatek.net/). VMware allows the use of the clipboard, making it unnecessary to establish an SSH connection—you can paste directly into the VM window. However, I am using the VMware trial just for this task. Generally, in most tasks, we won't have this feature available, which is why it's good practice to use SSH connections.
+- A terminal capable of establishing an SSH connection (for example, PowerShell). I prefer to use [MobaXterm](https://mobaxterm.mobatek.net/).
 
 ## VM Preparation:
 The detailed process of creating a VM on VMware will be skipped; you can check the details [here.](https://www.youtube.com/watch?v=sJNxJghTc28)
@@ -23,9 +23,20 @@ The detailed process of creating a VM on VMware will be skipped; you can check t
 
 ![изображение](https://github.com/user-attachments/assets/362c276a-2c18-473d-a5a6-ca269f10fe21)
 
- SSH connection and packet instalation:
- - Run your VM. 
- - To be able to connect to the VMs, we need to check their IP addresses. Open each VM window one by one, log in, and type `ip a`. Write down their IP addresses, and note which VM each one belongs to. 
+ ## VM's naming and basic network set up. SSH connection.
+ 1. Run your VM's and log in.
+ 2. We need to collect their IP addresses. Open each VM window one by one, log in, and type `ip a`. Write down their IP addresses, and note which VM each one belongs to.
+![изображение](https://github.com/user-attachments/assets/e516ffec-ce7e-4c0f-a930-406a6080e3b2)
+    - Open the terminal in my case, it's MobaXterm. Then, create the folder (Right click -> new folder).
+    - Inside the folder, establish the connection to the hosts. (Right click -> New connection).
+    ![изображение](https://github.com/user-attachments/assets/cbf87e80-70e3-48df-8dd8-f30364d2738d)
+
+    - Make your user part of the wheel group to be able to execute `sudo` commans:
+    ```bash
+    sudo 
+ 4. Rename your VM's:
+    -  
+ 
 
 ![Image](https://github.com/user-attachments/assets/87d11c4f-a82e-4aeb-b91e-ff5a6f3abc45)
 
