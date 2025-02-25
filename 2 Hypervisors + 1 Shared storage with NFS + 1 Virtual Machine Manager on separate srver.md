@@ -65,11 +65,13 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
     ```bash
     sudo hostnamectl --set-hostname Hypervisor01
     ```
-    - Execute the exit command again to apply the changes. Repeat this process on all the VMs. Aligned with their names and purposes.
+    - Execute the `exit` command again to apply the changes. Repeat this process on all the VMs. Aligned with their names and purposes.
     Then reestablish the ssh connection.
- 
+## KVM/QEMU package instalation 
 
-## NFS server instalation and congiguration:
+
+
+## NFS server instalation and congiguration
 - Install NFS utilities on NFS server:
 ```bash
  sudo dnf install -y nfs-utils
