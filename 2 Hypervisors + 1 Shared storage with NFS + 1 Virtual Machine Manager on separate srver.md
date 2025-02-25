@@ -123,6 +123,7 @@ Example line to allow read-write access for every ip:
 /var/nfs *(rw,sync,no_root_squash)
 ```
 The asterisk (*) represents all IP addresses. However, you can specify a particular IP address or a range if needed.
+
 Export the directory:
 
 ```bash
