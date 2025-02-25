@@ -69,59 +69,7 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
     Then reestablish the ssh connection.
  
 
-![Image](https://github.com/user-attachments/assets/87d11c4f-a82e-4aeb-b91e-ff5a6f3abc45)
-
-- Open four PowerShell windows and type the following command
-
-```bash
-ssh username@ip_that_you_write
-```
- - In order to have a GUI for Virtual Machine Manager that allows us to manage our local infrastructure from one window—without resorting to terminal commands—we need to install a server with a GUI by executing the following command:
-```bash
-sudo dnf group install 'Server with GUI'
-```
-- By default, a server might boot into a multi-user (text-based) runlevel. To make the server start into the GUI, run:
-```bash
-sudo systemctl set-default graphical.target
-```
-- Reboot the server for applying changes and load GUI:
-```bash
-sudo reboot
-```
-Anyway, it’s more convenient to continue using our SSH connection so that we can easily copy and paste.
-
-Install packages for Hypervisors:
-```bash
-sudo dnf install libvirt qemu-kvm virt-install 
-```
-A bit explanation:
-- libvirt: A toolkit and daemon providing a standardized API for managing virtual machines, abstracting the underlying hypervisor details.
-- qemu-kvm: QEMU is an emulator that provides hardware virtualization; combined with KVM (Kernel-based Virtual Machine), it enables efficient, full virtualization on Linux.
-- virt-install: A command-line utility that simplifies creating and installing new virtual machines using libvirt.
-
-- Check if the libvirtd daemon is running:
-```bash
- systemctl status libvirtd
-```
-- Enable it if it was disabled:
-```bash
-sudo systemctl enable --now libvirtd
-```
-Now, by executing `ip a`, you can see that a new Ethernet adapter has been added. Its name is virbr0, and it has the default address `192.168.122.1`.
-
-Install packages for VM manager:
-
-```bash
- sudo dnf install virt-manager openssh-askpass
-```
-A bit explanation:
-- virt-manager: Remote GUI.
-- openssh-askpass: Opens a prompt window for entering the password.
-- libvirt
-- sudo dnf install -y polkit
-- sudo dnf install -y polkit-kde
-
-NFS server instalation and congiguration:
+## NFS server instalation and congiguration:
 - Install NFS utilities on NFS server:
 ```bash
  sudo dnf install -y nfs-utils
