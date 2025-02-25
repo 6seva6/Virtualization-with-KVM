@@ -5,7 +5,7 @@ For this exercise, we will need:
 - Any version of a Linux server will work. Personally, I'll be using AlmaLinux 9.5 on hypervisors with NFS, and Ubuntu 22.04 on Virtual Machine Manager (VMM).
 - A terminal capable of establishing an SSH connection (for example, PowerShell). I prefer to use [MobaXterm](https://mobaxterm.mobatek.net/). VMware allows the use of the clipboard, making it unnecessary to establish an SSH connection—you can paste directly into the VM window. However, I am using the VMware trial just for this task. Generally, in most tasks, we won't have this feature available, which is why it's good practice to use SSH connections.
 
-## VM Preparation:
+### VM Preparation:
 - Open the VM’s Settings.
 - Go to Network.
 - Under Attached to, select Bridged Adapter.
