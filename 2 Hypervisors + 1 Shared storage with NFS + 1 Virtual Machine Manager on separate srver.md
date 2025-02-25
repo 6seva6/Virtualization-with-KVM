@@ -30,6 +30,7 @@ The detailed process of creating a VM on VMware will be skipped; you can check t
  egrep -cwo 'vmx|svm' /proc/cpuinfo
  ```
  If the result is a number bigger than 0 we can safely continue. Otherwise, we must check in case of physical machine, if the processor supports virtualization and if it is enabled in BIOS, or in case of a virtual machine, if the virtualization instructions are passed   on (nested virtualization enabled).
+ 
  3. We need to collect their IP addresses. Open each VM window one by one, log in, and type `ip a`. Write down their IP addresses, and note which VM each one belongs to.
 ![изображение](https://github.com/user-attachments/assets/e516ffec-ce7e-4c0f-a930-406a6080e3b2)
     - Open the terminal in my case, it's MobaXterm. Then, create the folder (Right click -> new folder).
