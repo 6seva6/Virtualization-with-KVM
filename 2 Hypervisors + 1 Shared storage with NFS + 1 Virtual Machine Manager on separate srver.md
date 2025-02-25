@@ -8,19 +8,18 @@ For this exercise, we will need:
 ## VM Preparation:
 The detailed process of creating a VM on VMware will be skipped; you can check the details [here.](https://www.youtube.com/watch?v=sJNxJghTc28)
 1. Create two VMs and name them Hypervisor01 and Hypervisor02.
- - Nested virtualisation should be enabled.
- - Swithc network adapter to the bridged. All VM's will be on our local network with inthernet acess.
- - Ensure they have enough resources to support another VM that will be installed (nested - Virtualize Intel VT-x/EPT or AMD-V/RVI) later. In my case, it will be Alpine Linux because it is lightweight and has minimal system requirements. My settings are:
+- Nested virtualisation should be enabled.
+- Swithc network adapter to the bridged. All VM's will be on our local network with inthernet acess.
+- Ensure they have enough resources to support another VM that will be installed (nested - Virtualize Intel VT-x/EPT or AMD-V/RVI) later. In my case, it will be Alpine Linux because it is lightweight and has minimal system requirements. My settings are:
 
 ![изображение](https://github.com/user-attachments/assets/ad1dd042-bb38-43a2-90e6-4c3aaf9e09f1)
 
- - Check if the Nested virtualisation is enabled to be able to run VM's insite current VM.
-![изображение](https://github.com/user-attachments/assets/540cba8c-a00c-4443-a4b1-ae461cf75dbe)
+2. Create the NFS VM.
+- Clone one of the Hypervisor VMs and rename it 'NFS'. You can allocate less RAM and CPU resources. Also, disable nested virtualization.
+3. Create a server where VMM will be installed.
+- Alligne the system resources with Linux that you will use. My settings are:
+![изображение](https://github.com/user-attachments/assets/362c276a-2c18-473d-a5a6-ca269f10fe21)
 
- - Clone the original VM in which you installed the Linux OS and name it "Ansible Host."
- - Be sure to select the option to generate new MAC addresses.
- - The installation process will be skipped.
- 
  SSH connection and packet instalation:
  - Run your VM. 
  - To be able to connect to the VMs, we need to check their IP addresses. Open each VM window one by one, log in, and type `ip a`. Write down their IP addresses, and note which VM each one belongs to. 
