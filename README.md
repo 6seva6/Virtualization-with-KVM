@@ -1,24 +1,12 @@
 # Linux Virtualization with KVM and QEMU  
 
-## About  
-This repository documents various **Linux virtualization** scenarios, primarily using **KVM (Kernel-based Virtual Machine) and QEMU (Quick Emulator)**. It serves as a reference for learning, troubleshooting, and hands-on practice.  
+In this repository, I store my **case scenarios** related to **Linux virtualization**, primarily using **KVM (Kernel-based Virtual Machine) and QEMU (Quick Emulator)**.  
 
-## Contents  
-Each scenario includes:  
-- 📌 **Step-by-step resolution** of tasks.  
-- ⚠️ **Common errors and fixes** encountered.  
-- 📷 **Screenshots and logs** for reference.  
+## 📂 Repository Structure  
+Each file contains:  
+- ✅ **Scenario description** with detailed steps.  
 - 🛠 **Required software and dependencies** for execution.  
-- 📝 **Commands and configurations** used in the process.  
+- ⚠️ **Errors encountered and their resolutions**.  
+- 📷 **Screenshots and logs** for reference.  
 
-## How to Use  
-1. Browse the repository and select a scenario.  
-2. Follow the documented steps to reproduce and resolve the case.  
-3. Use provided commands and configurations as needed.  
-
-## Why This Repository?  
-- ✅ Tracks my learning and progress in **Linux virtualization**.  
-- ✅ Demonstrates practical experience with **KVM and QEMU**.  
-- ✅ Serves as a troubleshooting guide for real-world scenarios.  
-
-🚀 **Contributions and feedback are welcome!**  
+This repository serves as a **learning resource** and a **proof of hands-on experience** in Linux virtualization.  
