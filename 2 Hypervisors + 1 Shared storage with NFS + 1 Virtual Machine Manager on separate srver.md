@@ -55,7 +55,7 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
     ```
     - Add user to the wheel group:
     ```bash
-    usermod -aG wheel seva
+    usermod -aG wheel username
     ```
     - To apply the changes, you need to log out or reboot. Execute the following command directly on the VM:
      ```bash
