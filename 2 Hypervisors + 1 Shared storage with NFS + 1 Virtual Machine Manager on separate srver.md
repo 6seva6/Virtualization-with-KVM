@@ -25,7 +25,12 @@ The detailed process of creating a VM on VMware will be skipped; you can check t
 
  ## VM's naming and basic network set up. SSH connection.
  1. Run your VM's and log in.
- 2. We need to collect their IP addresses. Open each VM window one by one, log in, and type `ip a`. Write down their IP addresses, and note which VM each one belongs to.
+ 2. Let’s first check if our machine supports hardware assisted virtualization by executing:
+ ```bash
+ egrep -cwo 'vmx|svm' /proc/cpuinfo
+ ```
+ If the result is a number bigger than 0 we can safely continue. Otherwise, we must check in case of physical machine, if the processor supports virtualization and if it is enabled in BIOS, or in case of a virtual machine, if the virtualization instructions are passed   on (nested virtualization enabled).
+ 3. We need to collect their IP addresses. Open each VM window one by one, log in, and type `ip a`. Write down their IP addresses, and note which VM each one belongs to.
 ![изображение](https://github.com/user-attachments/assets/e516ffec-ce7e-4c0f-a930-406a6080e3b2)
     - Open the terminal in my case, it's MobaXterm. Then, create the folder (Right click -> new folder).
     - Inside the folder, establish the connection to the hosts. (Right click -> New connection).
@@ -42,7 +47,6 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
     ```
     If you are already a member, you can skip the next step. If not, proceed as follows:
     In our case, AlmaLinux is part of the Red Hat Linux family, where the group is called 'wheel'.
-
     - Add your user to the wheel group to enable executing `sudo` commands.
     - To become root, use the following command:
     ```bash
