@@ -35,7 +35,15 @@ The detailed process of creating a VM on VMware will be skipped; you can check t
     ![изображение](https://github.com/user-attachments/assets/cbf87e80-70e3-48df-8dd8-f30364d2738d)
 
  4. Rename your VM's:
-    - Add your user to the wheel group to enable executing `sudo` commands. To become root, use the following command:
+We need to check if the user is a member of the wheel, adm or sudo group. The specific group name depends on your Linux distribution.
+    - Check that you can with the cpmmand:
+    ```bash
+    sudo cat /etc/group | grep -i username
+    ```
+If you are already a member, you can skip the next step. If not, proceed as follows:
+In our case, AlmaLinux is part of the Red Hat Linux family, where the group is called 'wheel'.
+    - Add your user to the wheel group to enable executing `sudo` commands.
+    - To become root, use the following command:
     ```bash
     su - root
     ```
