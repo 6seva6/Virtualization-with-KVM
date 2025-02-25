@@ -18,6 +18,7 @@ The detailed process of creating a VM on VMware will be skipped; you can check t
 - Clone one of the Hypervisor VMs and rename it 'NFS'. You can allocate less RAM and CPU resources. Also, disable nested virtualization.
 3. Create a server where VMM will be installed.
 - Align the system resources with the Linux distribution you will be using. My settings are:
+
 ![изображение](https://github.com/user-attachments/assets/362c276a-2c18-473d-a5a6-ca269f10fe21)
 
  SSH connection and packet instalation:
