@@ -68,7 +68,10 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
     - Execute the `exit` command again to apply the changes. Repeat this process on all the VMs. Aligned with their names and purposes.
     Then reestablish the ssh connection.
 ## KVM/QEMU package instalation 
-
+1. Update system packages:
+   ```bash
+   sudo dnf update -y
+   ```
 
 
 ## NFS server instalation and congiguration
