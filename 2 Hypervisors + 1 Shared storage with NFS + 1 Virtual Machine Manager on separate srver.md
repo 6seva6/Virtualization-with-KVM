@@ -6,8 +6,8 @@ For this exercise, we will need:
 - A terminal capable of establishing an SSH connection (for example, PowerShell). I prefer to use [MobaXterm](https://mobaxterm.mobatek.net/). VMware allows the use of the clipboard, making it unnecessary to establish an SSH connection—you can paste directly into the VM window. However, I am using the VMware trial just for this task. Generally, in most tasks, we won't have this feature available, which is why it's good practice to use SSH connections.
 
 ## VM Preparation:
-The detailed process of creating a VM on VMware will be skipped; you can check the details here. [here](https://www.youtube.com/watch?v=sJNxJghTc28)
-1 Create two VMs and name them Hypervisor01 and Hypervisor02.
+The detailed process of creating a VM on VMware will be skipped; you can check the details [here](https://www.youtube.com/watch?v=sJNxJghTc28)
+1. Create two VMs and name them Hypervisor01 and Hypervisor02.
 - Nested virtualisation should be enabled.
 - Swithc network adapter to the bridged. All VM's will be on our local network with inthernet acess.
 - Ensure they have enough resources to support another VM that will be installed (nested) later. In my case, it will be Alpine Linux because it is lightweight and has minimal system requirements. My settings are:
