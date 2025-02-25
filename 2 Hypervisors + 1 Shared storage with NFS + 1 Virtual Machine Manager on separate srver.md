@@ -80,7 +80,19 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
    ```bash
    sudo dnf install -y qemu-kvm libvirt virt-install bridge-utils nfs-utils
    ``` 
-
+4. Enable and start the libvirt daemon:
+   ```bash
+   sudo systemctl enable --now libvirtd
+   ```
+   - Check the status:
+     ```bash
+     systemctl status libvirtd
+     ```
+5. SELinux configuration.
+   - By default, SELinux is set to enforcing mode. For security purposes, we will not disable it. Instead, we need to allow NFS services by executing the following command:
+     ```bash
+     sudo setsebool -P virt_use_nfs 1
+     ```  
 ## NFS server instalation and congiguration
 - Install NFS utilities on NFS server:
 ```bash
