@@ -111,7 +111,7 @@ You can also adjust ownership and permissions as needed. For instance:
 
 ```bash
 sudo chown -R nobody:nobody /var/nfs
-sudo chmod -R 755 /var/nfs
+sudo chmod -R 0777 /var/nfs
 ```
 - Configure the export in `/etc/exports`
 
