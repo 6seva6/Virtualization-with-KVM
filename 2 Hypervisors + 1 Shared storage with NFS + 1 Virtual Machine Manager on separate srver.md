@@ -138,7 +138,7 @@ sudo firewall-cmd --reload
 ```
 If SELinux is enforcing, you might also need to allow NFS to serve files from your chosen directory. Assign a proper SELinux context to the shared directory, for example:
 ```bash
-sudo chcon -t public_content_rw_t /srv/nfs/shared
+sudo chcon -t public_content_rw_t /var/nfs
 ```
 Set Up the NFS Clients (repeat for each client VM):
 - Install NFS utilities on NFS server:
