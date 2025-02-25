@@ -1,4 +1,4 @@
-# Virtualization with KVM and QEMU
+## Virtualization with KVM and QEMU
 For this exercise, we will need:
 
 - VMware installed. I tried Oracle VirtualBox, but it doesn't properly support nested virtualization.
@@ -6,11 +6,14 @@ For this exercise, we will need:
 - A terminal capable of establishing an SSH connection (for example, PowerShell). I prefer to use [MobaXterm](https://mobaxterm.mobatek.net/). VMware allows the use of the clipboard, making it unnecessary to establish an SSH connection—you can paste directly into the VM window. However, I am using the VMware trial just for this task. Generally, in most tasks, we won't have this feature available, which is why it's good practice to use SSH connections.
 
 ## VM Preparation:
-- Open the VM’s Settings.
-- Go to Network.
-- Under Attached to, select Bridged Adapter.
+The detailed process of creating a VM on VMware will be skipped; you can check the details here. [here](https://www.youtube.com/watch?v=sJNxJghTc28)
+1 Create two VMs and name them Hypervisor01 and Hypervisor02.
+- Nested virtualisation should be enabled.
+- Swithc network adapter to the bridged. All VM's will be on our local network with inthernet acess.
+- Ensure they have enough resources to support another VM that will be installed (nested) later. In my case, it will be Alpine Linux because it is lightweight and has minimal system requirements. My settings are:
 
-![Image](https://github.com/user-attachments/assets/59365b7b-fb16-48c7-bcad-865a05a1b0eb)
+![изображение](https://github.com/user-attachments/assets/ad1dd042-bb38-43a2-90e6-4c3aaf9e09f1)
+
  - Check if the Nested virtualisation is enabled to be able to run VM's insite current VM.
 ![изображение](https://github.com/user-attachments/assets/540cba8c-a00c-4443-a4b1-ae461cf75dbe)
 
