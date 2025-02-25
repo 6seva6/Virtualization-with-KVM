@@ -7,6 +7,7 @@ For this exercise, we will need:
 
 ## VM Preparation:
 The detailed process of creating a VM on VMware will be skipped; you can check the details [here.](https://www.youtube.com/watch?v=sJNxJghTc28)
+
 **1. Create two VMs and name them Hypervisor01 and Hypervisor02.**
 - Nested virtualisation should be enabled.
 - Swithc network adapter to the bridged. All VM's will be on our local network with inthernet acess.
