@@ -35,7 +35,7 @@ The detailed process of creating a VM on VMware will be skipped; you can check t
     ![изображение](https://github.com/user-attachments/assets/cbf87e80-70e3-48df-8dd8-f30364d2738d)
 
  4. Rename your VM's:
-    - Make your user part of the wheel group to be able to execute `sudo` commans. Become a root:
+    - Add your user to the wheel group to enable executing `sudo` commands. To become root, use the following command:
     ```bash
     su - root
     ```
@@ -43,7 +43,7 @@ The detailed process of creating a VM on VMware will be skipped; you can check t
     ```bash
     usermod -aG wheel seva
     ```
-    - To apply changes we need to log out or reboot, execute comman directly on VM:
+    - To apply the changes, you need to log out or reboot. Execute the following command directly on the VM:
      ```bash
     exit
     ```
@@ -51,8 +51,8 @@ The detailed process of creating a VM on VMware will be skipped; you can check t
     ```bash
     sudo hostnamectl --set-hostname Hypervisor01
     ```
-    - Once again execute exit to apply the changes. Repeat on all the VM's.
-    Then reconnect the ssh connection
+    - Execute the exit command again to apply the changes. Repeat this process on all the VMs.
+    Then reestablish the ssh connection.
  
 
 ![Image](https://github.com/user-attachments/assets/87d11c4f-a82e-4aeb-b91e-ff5a6f3abc45)
