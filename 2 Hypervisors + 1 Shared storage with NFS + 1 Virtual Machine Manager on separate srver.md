@@ -51,7 +51,7 @@ The detailed process of creating a VM on VMware will be skipped; you can check t
     ```bash
     sudo hostnamectl --set-hostname Hypervisor01
     ```
-    - Execute the exit command again to apply the changes. Repeat this process on all the VMs.
+    - Execute the exit command again to apply the changes. Repeat this process on all the VMs. Aligned with their names and purposes.
     Then reestablish the ssh connection.
  
 
