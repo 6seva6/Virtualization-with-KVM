@@ -40,8 +40,9 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
     ```bash
     sudo cat /etc/group | grep -i username
     ```
-If you are already a member, you can skip the next step. If not, proceed as follows:
-In our case, AlmaLinux is part of the Red Hat Linux family, where the group is called 'wheel'.
+    If you are already a member, you can skip the next step. If not, proceed as follows:
+    In our case, AlmaLinux is part of the Red Hat Linux family, where the group is called 'wheel'.
+
     - Add your user to the wheel group to enable executing `sudo` commands.
     - To become root, use the following command:
     ```bash
