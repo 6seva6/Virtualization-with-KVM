@@ -241,25 +241,31 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
         ![изображение](https://github.com/user-attachments/assets/91638936-102b-4fa5-9f50-659d7710a13e)
 
         - We will keep the default network and other settings except for a couple. Extremle important to know how work SSH Tunnel to Localhost.
-Virt-manager establishes a secure SSH tunnel and forwards VNC (or SPICE) traffic to localhost on the hypervisor. If VNC is set to listen on 0.0.0.0 (all interfaces), then you must open port 5900 in the hypervisor firewall and expose it externally, which is typically unnecessary and less secure.
+        Virt-manager establishes a secure SSH tunnel and forwards VNC (or SPICE) traffic to localhost on the hypervisor. If VNC is set to listen on 0.0.0.0 (all interfaces), then you must open port 5900 in the                    hypervisor firewall and expose it externally, which is typically unnecessary and less secure
 
         ![изображение](https://github.com/user-attachments/assets/edef8228-8666-4ecd-a7d5-85e29476934d)
 
         - Select `Boot Options`, enable `CDROM`, and using the arrows, move it to the top. Then press `Apply`
-        - 
+          
         ![изображение](https://github.com/user-attachments/assets/207c11c5-ec51-44d7-8917-ecf740cf7e29)
 
-        - Select `CDROM`, click `Browse`, and choose your ISO image, as the guest OS will boot from it.
-        - 
+        - Select `CDROM`, click `Browse`, and choose your ISO image, as the guest OS will boot from it
+      
         ![изображение](https://github.com/user-attachments/assets/9c52ff07-ff7d-493f-a993-442577ae6f39)
 
-
-        
-
- Then, apply the changes.
         - Click `Begin Installation` on the top left corner
+          
+5. Installation of Guest OS
+   - After pressing Begin Installation popup window will appear
 
+   ![изображение](https://github.com/user-attachments/assets/30c9a368-8580-430e-830b-55bbb101b13d)
 
+   - Install the Desired OS (in our case, Alpine) and Shut Down the VM
 
+   - Open the VM manager, select the installed VM, and in the popup window, navigate to `Boot Options`. Disable `CDROM` and click `Apply`. From now on, your OS will boot from the installed virtual disk.
 
+   ![изображение](https://github.com/user-attachments/assets/e16b169e-1bf9-42e2-ada0-391b7c1a2099)
 
+   ![изображение](https://github.com/user-attachments/assets/3619680b-6d07-4826-a40e-af425b1a07be)
+
+Congratulations! We now have our local cloud, and we can even migrate launched VMs from one Hypervisor to another. I will explain how to do this later.
