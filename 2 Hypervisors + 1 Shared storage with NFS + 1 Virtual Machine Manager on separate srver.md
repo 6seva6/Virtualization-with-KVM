@@ -236,4 +236,7 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
 
         ![изображение](https://github.com/user-attachments/assets/13029d04-9974-45d2-9a75-44620c46746b)
 
+        - We're almost there! :) In the next popup window, select `Customize configuration before install`
+          
+        ![изображение](https://github.com/user-attachments/assets/91638936-102b-4fa5-9f50-659d7710a13e)
 
