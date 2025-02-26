@@ -214,3 +214,15 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
         - Launch the VMM interface
         - Use the cursor to navigate and click on the previously established QEMU/KVM connections
         - Navigate to -> File -> New Virtual Machine
+        ![изображение](https://github.com/user-attachments/assets/0498d644-241b-4d58-8653-993ae2b08e07)
+
+        - Select option: `Local install media` and click -> Forward
+        - Click -> browse
+        - If you mounted the NFS shared folder in /var/lib/libvirt/images, then you will be able to see the image
+          
+        ![изображение](https://github.com/user-attachments/assets/b3fa66b5-eaa5-4c1a-859b-a665d67620cb)
+
+        - If not, you will need to manually add a pool by clicking the green plus sign at the bottom left. In the popup window, specify the target path
+          
+        ![изображение](https://github.com/user-attachments/assets/0bb6ec04-9548-43ad-8e1f-73efbe80f73d)
+
