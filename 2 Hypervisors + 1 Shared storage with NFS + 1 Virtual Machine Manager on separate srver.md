@@ -246,12 +246,15 @@ Virt-manager establishes a secure SSH tunnel and forwards VNC (or SPICE) traffic
         ![изображение](https://github.com/user-attachments/assets/edef8228-8666-4ecd-a7d5-85e29476934d)
 
         - Select `Boot Options`, enable `CDROM`, and using the arrows, move it to the top. Then press `Apply`
+        - 
+        ![изображение](https://github.com/user-attachments/assets/207c11c5-ec51-44d7-8917-ecf740cf7e29)
+
         - Select `CDROM`, click `Browse`, and choose your ISO image, as the guest OS will boot from it.
         - 
         ![изображение](https://github.com/user-attachments/assets/9c52ff07-ff7d-493f-a993-442577ae6f39)
 
 
-        ![изображение](https://github.com/user-attachments/assets/207c11c5-ec51-44d7-8917-ecf740cf7e29)
+        
 
  Then, apply the changes.
         - Click `Begin Installation` on the top left corner
