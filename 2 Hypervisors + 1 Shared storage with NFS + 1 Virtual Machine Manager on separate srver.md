@@ -199,3 +199,18 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
 
     ![изображение](https://github.com/user-attachments/assets/478a7b64-f88c-4db6-a748-e555febe65a4)
 
+3. Preparation Steps for Creating the VM
+   - We need to download the operating system in our case, Alpine Linux. First, go to the NFS server, install the necessary tool for downloading, and then download the image:
+       ```bash
+       sudo dnf install wget
+       sudo wget https://dl-cdn.alpinelinux.org/alpine/v3.21/releases/x86_64/alpine-standard-3.21.3-x86_64.iso
+       ```
+   - Move downloaded image to the shared folder:
+       ```bash
+       sudo mv /path/to/iso /path/to/shared/folder
+       ```
+4. Creation of the VM:
+    - Open the Virtual Machine Manager (VMM) on Ubuntu 22.04
+        - Launch the VMM interface
+        - Use the cursor to navigate and click on the previously established QEMU/KVM connections
+        - Navigate to -> File -> New Virtual Machine
