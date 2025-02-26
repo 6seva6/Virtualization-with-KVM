@@ -183,3 +183,14 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
        ```bash
        sudo ssh username@hypervisor_IP
        ```
+   - Start Virt-Manager from the application menu (or type `virt-manager` in terminal)
+        - Go to File > Add Connection…
+        ![изображение](https://github.com/user-attachments/assets/f1c53bf8-5afc-4483-b090-c38a11461b69)
+        ![изображение](https://github.com/user-attachments/assets/1d8f54b6-4ca5-4749-b4ba-5f671fa6cf3f)
+        - Enable Connect to remote host over SSH
+        - Hypervisor: QEMU/KVM
+        - Username: (your SSH user on the AlmaLinux hypervisor)
+        - Hostname or IP: e.g. 192.168.1.44
+    Once connected, you should see both hypervisors listed in Virt-Manager. You can manage, create, and start VMs on them.
+    ![изображение](https://github.com/user-attachments/assets/478a7b64-f88c-4db6-a748-e555febe65a4)
+
