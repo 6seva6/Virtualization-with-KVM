@@ -163,6 +163,23 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
 4. By default, root can manage libvirt without any extra group membership. However, if you plan to manage virtual machines from a non-root account (for example, using virt-manager or virsh as a regular user), you generally need to add that user to the libvirt group. This grants the necessary permissions to communicate with the libvirtd service.
    
     ```bash
-    sudo usermod -aG libvirt <username>
+    sudo usermod -aG libvirt username
     ```
     - Afterward, log out and back in (or restart your session) for the group membership to take effect.
+## VMM with ubuntu 22.04 with GUI
+
+1. Install required packages:
+   ```bash
+   sudo apt update
+   sudo apt install -y virt-manager qemu-kvm bridge-utils openssh-client ssh-askpass
+   ```
+   - virt-manager: GUI for managing virtual machines locally and remotely via libvirt.
+   - qemu-kvm: QEMU KVM tools (often required for certain drivers or CLI integration if you do local virtualization).
+   - bridge-utils: If you want bridging on Ubuntu too.
+   - openssh-client: So you can SSH into the hypervisors if needed. More often than not, this package is not installed by default in Ubuntu workstation distributions. If it's a server, it may prompt you during the installation process to install the openssh-client.
+   - ssh-askpass: This utility will prompt a window asking you to enter your SSH password.
+2. Work with Virtual Machine Manager
+   - To add a host to the list of known hosts, we need to establish a basic SSH connection to our Hypervisor hosts:
+   ```bash
+   sudo ssh username@hypervisor_IP
+   ```
