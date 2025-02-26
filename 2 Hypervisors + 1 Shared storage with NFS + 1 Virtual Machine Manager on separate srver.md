@@ -180,6 +180,6 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
    - ssh-askpass: This utility will prompt a window asking you to enter your SSH password.
 2. Work with Virtual Machine Manager
    - To add a host to the list of known hosts, we need to establish a basic SSH connection to our Hypervisor hosts:
-   ```bash
-   sudo ssh username@hypervisor_IP
-   ```
+       ```bash
+       sudo ssh username@hypervisor_IP
+       ```
