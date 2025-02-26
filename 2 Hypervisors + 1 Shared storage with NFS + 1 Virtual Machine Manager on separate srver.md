@@ -240,3 +240,7 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
           
         ![изображение](https://github.com/user-attachments/assets/91638936-102b-4fa5-9f50-659d7710a13e)
 
+        - We will keep the default network and other settings except for one. By default, the Hypervisor listens for VNC on localhost (127.0.0.1:5900). However, to enable remote connections to the guest OS, go to the customization window and select `Display VNC` -> `Type: VNC server` -> `Listen type: Address` -> `Address: All interfaces`. Then, apply the changes.
+
+        ![изображение](https://github.com/user-attachments/assets/cc6fd7ff-cd20-473a-9a15-1903adfcaab0)
+
