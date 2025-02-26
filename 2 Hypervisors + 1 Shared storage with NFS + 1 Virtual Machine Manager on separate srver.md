@@ -218,11 +218,22 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
 
         - Select option: `Local install media` and click -> Forward
         - Click -> browse
-        - If you mounted the NFS shared folder in /var/lib/libvirt/images, then you will be able to see the image
+        - If you mounted the NFS shared folder in `/var/lib/libvirt/images`, then you will be able to see the image
           
         ![изображение](https://github.com/user-attachments/assets/b3fa66b5-eaa5-4c1a-859b-a665d67620cb)
 
         - If not, you will need to manually add a pool by clicking the green plus sign at the bottom left. In the popup window, specify the target path
           
         ![изображение](https://github.com/user-attachments/assets/0bb6ec04-9548-43ad-8e1f-73efbe80f73d)
+
+        - After this, select your ISO image and click `Select Volume`. In the popup window, type your operating system in the bottom field. If it’s not listed, choose the closest operating system to it and then `Forward`
+
+        ![изображение](https://github.com/user-attachments/assets/9ffd6810-5666-4852-b893-6e21bb006869)
+      
+        - Again, a popup window will appear displaying RAM and CPU requirements. You can adjust these settings as desired
+
+        ![изображение](https://github.com/user-attachments/assets/165f0d84-ccf9-4d90-963f-1af90fb25e7a)
+
+        ![изображение](https://github.com/user-attachments/assets/13029d04-9974-45d2-9a75-44620c46746b)
+
 
