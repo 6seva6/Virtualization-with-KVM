@@ -137,9 +137,9 @@ We need to check if the user is a member of the wheel, adm or sudo group. The sp
     sudo firewall-cmd --reload
     ```
 5. As we already discussed, SELinux is set to enforcing mode, you might also need to allow NFS to serve files from your chosen directory. Assign a proper SELinux context to the shared directory:
-```bash
-sudo chcon -t public_content_rw_t /var/nfs
-```
+    ```bash
+    sudo chcon -t public_content_rw_t /var/nfs
+    ```
 ## Mount the NFS Share on Each Hypervisor
 
 1. Create a mount point.
@@ -157,9 +157,9 @@ sudo chcon -t public_content_rw_t /var/nfs
     df -h | grep nfs 
     ```
 3. To have the NFS share mounted automatically whenever the client restarts, add an entry to `/etc/fstab`:
-```bash
-<NFS_server_IP>:/var/nfs   /var/lib/libvirt/images    nfs     defaults,_netdev  0 0
-```
+    ```bash
+    NFS_server_IP:/var/nfs   /var/lib/libvirt/images    nfs     defaults,_netdev  0 0
+    ```
 4. By default, root can manage libvirt without any extra group membership. However, if you plan to manage virtual machines from a non-root account (for example, using virt-manager or virsh as a regular user), you generally need to add that user to the libvirt group. This grants the necessary permissions to communicate with the libvirtd service.
    
     ```bash
